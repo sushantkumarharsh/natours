@@ -1,0 +1,186 @@
+*,
+*::after,
+*::before
+{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: inherit;
+}
+
+body{
+    font-size: "lato, sans-serif";
+    font-weight: 300;
+    /* font-size: 20px; */
+    line-height: 2;
+    color: grey;
+     padding: 3rem;
+     box-sizing: border-box;
+}
+.header {
+    height: 95vh;
+     background-image: linear-gradient(to right bottom ,rgba($color-primary-light, 0.795), rgba($color-primary-darken, 0.795)) ,
+     url(../advcss/images/hero.jpg);
+    background-size: cover;
+    background-position: top;
+    clip-path: polygon(0 0,100% 0,100% 75vh,0 100%);
+    text-align: center;
+color:$color-white;
+&-para{
+    position:absolute;
+    top: 40%;
+    left: 50%;
+     transform: translate(-50% , -50%);
+}
+&-logo-box {
+    position: absolute;
+    top: 5rem;
+  
+    left: 3rem;
+    // &-:hover{
+    //     animation: moveinright 1s ease-out ;
+    // }
+}
+  &-logo-img{
+    height: 8vh;
+    padding: 1rem 1.5rem;
+  }
+
+
+
+   
+}
+
+
+.heading-pri{
+    backface-visibility: hidden;
+    &-main{
+        text-transform: uppercase;
+        display: block;
+        font-size: 5.5rem;
+        font-weight: 400;
+        letter-spacing: 3rem;
+        animation-name: moveinleft;
+        animation-duration: 2s;
+        animation-timing-function: ease-in;}
+        &-sub{
+            display: block;
+            text-transform: uppercase;
+            /* font-size: 30px; */
+            font-size: 2rem;
+            font-weight: 400;
+            letter-spacing: 1.5rem;
+            animation-name: moveinright;
+            animation-duration: 2s;
+            animation-timing-function: ease-out;
+         
+        }
+}
+
+.btn{
+    &,
+    &:link,
+    &:visited{
+    text-transform:uppercase;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+    padding: 1rem 2rem;
+    border-radius: 10rem;
+    margin-top: 5rem;
+    transition: all .2s;
+font-size: 1.6rem;
+//change for button element
+border: none;
+cursor: pointer;
+    }
+&:hover{
+    transform: translateY(-0.3rem);
+    box-shadow: 0 1.5rem 1rem rgba($color-black, 0.308);
+    
+    
+    }
+    &:active,
+    &:focus{
+        outline: none;
+        transform: translateY(-0.2rem);
+        box-shadow: 0 1.5rem 1rem (rgba($color-black, 0.308));
+    
+    }
+&::after{
+        content: "";
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        border-radius: 10rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all .5s;
+    }
+        &:hover::after{
+            transform: scaleX(1.5) scaleY(1.7);
+            opacity: 0;
+              } 
+    
+                      
+}
+.btn1{
+    background-color:$color-white;
+    color: $color-dark-grey;
+    animation: moveinbottom 1s ease-out .5s;
+animation-fill-mode: backwards;
+&::after{
+    background-color:$color-white;
+}
+&-green{
+    background-image: linear-gradient(to right, rgba($color-primary-darken, 0.795), rgba($color-primary-light, 0.795));
+    color: $color-white;
+    &::after{
+        background-color:rgba($color-primary-darken, 0.795);
+    }
+}
+}
+@keyframes moveinleft{
+    0%{
+        opacity: 0;
+        transform: translateX(-10rem);
+    }
+    70%{
+        opacity: 0.5;
+        transform: translateX(3rem)
+        
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+     /* we can use rotate also but in degree  */
+} 
+  @keyframes moveinright{
+    0%{
+        opacity: 0;
+        transform: translateX(10rem);
+    }
+    70%{
+        opacity: 0.5;
+        
+        transform: translateX(-3rem);
+        
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+} 
+@keyframes moveinbottom{
+    0%{
+        opacity: 0;
+        transform: translateY(10rem);
+    }
+   
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+} 

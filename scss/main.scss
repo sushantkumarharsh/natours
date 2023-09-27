@@ -1,0 +1,27 @@
+@import "variables.scss";
+@import "heading-pri.scss";
+@import "heading-sec.scss";
+@import "heading-ter.scss";
+@import "section-features.scss";
+@import "tours.scss";
+@import "utility.scss";
+@import "stories.scss";
+@import "book.scss";
+@import "footer.scss";
+@import "navigation.scss";
+@import   "popup.scss";
+@import "mixins.scss";
+
+
+html{
+    font-size: 62.5%;
+    @include respond(tab-land){ //width<1200
+        font-size: 56.25%;
+    }
+    @include respond(tab-port){ //width<900
+        font-size: 50%;
+    }
+    @include respond(big-desktop){ //width<1200
+        font-size: 75%;
+    }
+}
